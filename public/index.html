@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="divlogo">
+        <img id="logo" src="VA.png" alt="">
+    </div>
+
+    <h1>Dates</h1>
+    <form id="taskForm" onsubmit="event.preventDefault(); addTask();">
+        <div>
+            <input type="text" id="taskInput" placeholder="Adicionar Date" required>
+            <select id="categorySelect">
+                <option value="" disabled selected>Selecione uma categoria</option>
+                <option value="bar">Bar</option>
+                <option value="restaurante">Restaurante</option>
+                <option value="lazer">Lazer</option>
+                <option value="viagens">Viagens</option>
+                <option value="esporte">Esporte</option>
+                <option value="filme">Filme</option>
+            </select>
+        </div>
+        <button type="submit">Adicionar Date</button>
+    </form>
+
+    <!-- Seletor de filtro de categoria -->
+    <label for="filterCategory">Filtrar por categoria:</label>
+    <select id="filterCategory" onchange="filterTasks()">
+        <option value="">Todas</option>
+        <option value="bar">Bar</option>
+        <option value="restaurante">Restaurante</option>
+        <option value="lazer">Lazer</option>
+        <option value="viagens">Viagens</option>
+        <option value="esporte">Esporte</option>
+        <option value="filme">Filme</option>
+    </select>
+
+    <ul id="taskList"></ul>
+
+    <div id="blackScreen">
+        <img id="coracaoimg" src="coracao.png" alt="">
+    </div>
+
+    <!-- Formulário de Edição -->
+    <form id="editForm" onsubmit="event.preventDefault(); updateTask();">
+        <input type="text" id="editTaskInput" placeholder="Editar tarefa" required>
+        <select id="editCategorySelect">
+            <option value="bar">Bar</option>
+            <option value="restaurante">Restaurante</option>
+            <option value="lazer">Lazer</option>
+            <option value="viagens">Viagens</option>
+            <option value="esporte">Esporte</option>
+            <option value="filme">Filme</option>
+        </select>
+        <button type="submit">Salvar Alterações</button>
+        <button type="button" onclick="cancelEdit()">Cancelar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

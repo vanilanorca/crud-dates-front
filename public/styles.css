@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.372) 0%, rgba(0, 0, 0, 0.806) 100%), url(background.jpeg);
+    background-size: cover;
+}
+
+h1,
+label {
+    color: #FFFFFF;
+}
+
+#logo {
+    width: 100px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+input {
+    padding: 8px;
+    width: 200px;
+}
+
+button {
+    padding: 8px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: 400px;
+    padding: 15px;
+    box-shadow: 9px 6px 14px -2px rgba(0, 0, 0, 0.75);
+}
+
+li button {
+    margin-left: 5px;
+}
+
+#taskForm {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border: 1px solid rgb(191, 0, 255);
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+#taskForm button {
+    border: none;
+    background: #2c8724;
+    color: white;
+    border-radius: 30px;
+    margin-top: 12px;
+}
+
+#filterCategory {
+    margin-top: 12px;
+}
+
+#categorySelect {
+    height: 35px;
+}
+
+#editForm {
+    display: none;
+    margin-top: 20px;
+    position: absolute;
+    background: #6600b5;
+    padding: 40px;
+    border-radius: 15px;
+    z-index: 3;
+}
+
+#editCategorySelect {
+    height: 35px;
+}
+
+#blackScreen {
+    background: rgba(0, 0, 0, 0.777);
+    width: 100%;
+    height: 100vh; /* 100% da altura da viewport */
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0; /* Adicionado para garantir que fique alinhado à esquerda */
+    opacity: 0;
+    display: none;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes sumir {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+#coracaoimg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%; 
+    max-height: 90%;
+    height: 200px;
+    z-index: 9;
+    filter: brightness(0) invert(1);
+}
+
+/* @keyframes expandHeight {
+    from { height: 0px; }
+    to { height: 200px; }
+} */
+
+#editForm button:first-of-type {
+    background: #2c8724;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+#editForm button:nth-of-type(2) {
+    background: #df1616;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 14px;
+        /* Tamanho de fonte menor em telas pequenas */
+    }
+
+    h1{
+        margin-top: 120px;
+    }
+
+    #taskForm {
+        width: 70%;
+    }
+
+    #taskForm input {
+        width: 60%;
+    }
+
+    #taskForm select {
+        width: 30%;
+    }
+
+    #logo {
+        width: 50px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+    #divlogo {
+        background: rgba(0, 0, 0, 0.901);
+        position: fixed;
+        top: 0;
+        padding: 0 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        width: 100%;
+    }
+
+    #taskList {
+        width: 90%;
+    }
+
+    #taskList li {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    #editForm {
+        width: 60%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #editForm #editTaskInput {
+        width: 95%;
+    }
+
+    #editForm #editCategorySelect {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #editForm button:first-of-type {
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #editForm button:nth-of-type(2) {
+        border: none;
+        border-radius: 3px;
+        width: 40%;
+        float: right;
+    }
+
+}
+
+@media (pointer: coarse) {}
